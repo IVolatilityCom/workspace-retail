@@ -3,9 +3,7 @@ import os
 from dotenv import load_dotenv
 from tinydb import TinyDB,Query
 
-
-# Путь к базе данных
-db_path = '/Users/manbetov/Documents/Flashpost/flashpostVariable.db'
+db_path = './Documents/Flashpost/flashpostVariable.db'
 
 with open(db_path, "r") as jsonFile:
     data = json.load(jsonFile)
@@ -25,9 +23,7 @@ print('After Modifying:', modified_json)
 with open(db_path, "w") as jsonFile:
     json.dump(data, jsonFile)
 
-
-# Вывод структуры базы данных для проверки
-print("Структура базы данных:")
+print("DB structure:")
 with open(db_path) as db_file:
     db_content = json.load(db_file)
     print(json.dumps(db_content, indent=4))
